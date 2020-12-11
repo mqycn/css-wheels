@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Switch</title>
+  <style type="text/css">
+    .switch {
+      display: block;
+      width: 60px;
+      height: 30px;
+      position: relative;
+    }
+
+    .switch input {
+      visibility: hidden;
+      display: block;
+    }
+
+    .switch input::before {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      visibility: visible;
+      background: #e9e9e9;
+      border-radius: 15px;
+      transition: all 0.2s;
+    }
+
+    .switch input:checked::before {
+      background-color: #009900;
+    }
+
+    .switch input::after {
+      content: ' ';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #fff;
+      visibility: visible;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .switch input:checked::after {
+      transform: translateX(30px);
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset>
+    <legend>checkbox switch</legend>
+    <label class="switch">
+      <input type="checkbox" />
+    </label>
+    <label class="switch">
+      <input type="checkbox" />
+    </label>
+  </fieldset>
+  <fieldset>
+    <legend>radio switch</legend>
+    <label class="switch">
+      <input type="radio" name="radio-test" checked />
+    </label>
+    <label class="switch">
+      <input type="radio" name="radio-test" />
+    </label>
+  </fieldset>
+
+</body>
+
+</html>
