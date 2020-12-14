@@ -9,32 +9,35 @@
       display: block;
       width: 60px;
       height: 30px;
+      margin: 3px;
       position: relative;
     }
 
     .switch input {
-      visibility: hidden;
+      display: none;
+    }
+
+    .switch input+i {
       display: block;
     }
 
-    .switch input::before {
+    .switch input+i::before {
       content: ' ';
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
-      visibility: visible;
       background: #e9e9e9;
       border-radius: 15px;
       transition: all 0.2s;
     }
 
-    .switch input:checked::before {
+    .switch input:checked+i::before {
       background-color: #009900;
     }
 
-    .switch input::after {
+    .switch input+i::after {
       content: ' ';
       position: absolute;
       top: 3px;
@@ -43,12 +46,11 @@
       height: 24px;
       border-radius: 50%;
       background: #fff;
-      visibility: visible;
       cursor: pointer;
       transition: all 0.2s;
     }
 
-    .switch input:checked::after {
+    .switch input:checked+i::after {
       transform: translateX(30px);
     }
   </style>
@@ -58,19 +60,23 @@
   <fieldset>
     <legend>checkbox switch</legend>
     <label class="switch">
-      <input type="checkbox" />
+      <input type="checkbox">
+      <i></i>
     </label>
     <label class="switch">
-      <input type="checkbox" />
+      <input type="checkbox">
+      <i></i>
     </label>
   </fieldset>
   <fieldset>
     <legend>radio switch</legend>
     <label class="switch">
-      <input type="radio" name="radio-test" checked />
+      <input type="radio" name="radio-test" checked>
+      <i></i>
     </label>
     <label class="switch">
-      <input type="radio" name="radio-test" />
+      <input type="radio" name="radio-test">
+      <i></i>
     </label>
   </fieldset>
 
