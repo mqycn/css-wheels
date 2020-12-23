@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Radio</title>
+  <style type="text/css">
+    .radio {
+      display: block;
+      width: 30px;
+      height: 30px;
+      margin: 3px;
+      position: relative;
+    }
+
+    .radio input {
+      display: none;
+    }
+
+    .radio input+i {
+      display: block;
+    }
+
+    .radio input+i::before {
+      content: ' ';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #e9e9e9;
+      border-radius: 15px;
+      transition: all 0.2s;
+    }
+
+    .radio input:checked+i::before {
+      background-color: #009900;
+    }
+
+    .radio input+i::after {
+      content: ' ';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fdfdfd;
+      border: solid 6px #fdfdfd;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .radio input:checked+i::after {
+      background-color: #009900;
+    }
+  </style>
+</head>
+
+<body>
+  <fieldset>
+    <legend>radio</legend>
+    <label class="radio">
+      <input type="radio" name="radio-demo-test" checked>
+      <i></i>
+    </label>
+    <label class="radio">
+      <input type="radio" name="radio-demo-test">
+      <i></i>
+    </label>
+  </fieldset>
+
+</body>
+
+</html>
